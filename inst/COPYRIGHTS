@@ -1,0 +1,15 @@
+This package includes third-party code under permissive licenses:
+
+1) klib (khash.h)
+   - File(s): src/khash.h
+   - Origin: https://github.com/attractivechaos/klib
+   - License: MIT
+   - Copyright: © Attractive Chaos
+   - Notice: The MIT license header from khash.h is preserved.
+
+2) BGZF I/O snippets (if applicable)
+   - File(s): src/bgzf.c, src/bgzf.h
+   - Origin: SAMtools/HTSlib (https://github.com/samtools/htslib)
+   - License: MIT/Expat
+   - Copyright: The SAMtools/HTSlib authors
+   - Notice: Upstream copyright and license notices are preserved.
