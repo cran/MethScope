@@ -31,7 +31,7 @@ reference_pattern <- "Liu2021_MouseBrain.cm"
 input_pattern <- GenerateInput(example_file, reference_pattern)
 ```
 
-If your input data contains many cells, we recommend splitting your .cg files and run the above code in parallel to improve the runtime. To split your .cg files, please refer to (https://zhou-lab.github.io/YAME/docs/subset.html). For understanding of each pattern, please check out our knowYourCG tool: https://www.bioconductor.org/packages/release/bioc/html/knowYourCG.html
+If your input data contains many cells, we recommend splitting your .cg files and run the above code in parallel to improve the runtime. To split your .cg files, please refer to (https://zhou-lab.github.io/YAME/docs/subcommands/YAME_subset.html). For understanding of each pattern, please check out our knowYourCG tool: https://www.bioconductor.org/packages/release/bioc/html/knowYourCG.html
 
 ## Perform cell type annotation
 

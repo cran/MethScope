@@ -15,7 +15,7 @@ PlotUMAP(predictMatrix, prediction_result, n_component = 30, seed = 123, ...)
 
 \item{seed}{A number for random seed (Default: 123)}
 
-\item{...}{Additional arguments passed to \code{uwot::umap} (e.g., \code{n_neighbors}, \code{metric}).}
+\item{...}{Additional arguments passed to `uwot::umap` (e.g., `n_neighbors`, `metric`).}
 }
 \value{
 A list of two ggplot2 UMAP object.

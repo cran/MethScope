@@ -10,9 +10,9 @@ GenerateReference(binary_file, min_CG = 50, output_path = NULL)
 \item{binary_file}{Path to the pattern strings file (one string per line).}
 
 \item{min_CG}{Minimum CpG count a pattern must have to keep its own ID (default: 50).
-Patterns with frequency <= \code{min_CG} are grouped as "Pna".}
+Patterns with frequency <= `min_CG` are grouped as "Pna".}
 
-\item{output_path}{Optional file path to write the resulting labels. If \code{NULL} (default),
+\item{output_path}{Optional file path to write the resulting labels. If `NULL` (default),
 nothing is written and the labels are only returned.}
 }
 \value{

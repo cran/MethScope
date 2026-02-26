@@ -136,9 +136,9 @@ void fmt3_compress(cdata_t *c) {
       ++l;
     }
   }
-  if (l>0) {
-    s = realloc(s, n+2);
-    *((uint16_t*) (s+n)) = (uint16_t) l<<2;
+  if (l > 0) {
+    s = realloc(s, n + 2);
+    pack_value(s + n, ((uint64_t)l) << 2, 2);
     n += 2;
   }
   free(c->s);
@@ -150,30 +150,38 @@ void fmt3_compress(cdata_t *c) {
 static uint64_t get_data_length(cdata_t *c, uint8_t *unit) {
   uint8_t nbits = 1; // half unit nbits, M or U.
   uint64_t n = 0;
-  for (uint64_t i=0; i < c->n; ) {
-    if ((c->s[i] & 0x3) == 0) {
-      n += (((uint16_t*) (c->s+i))[0])>>2;
+
+  for (uint64_t i = 0; i < c->n; ) {
+    uint8_t tag = c->s[i] & 0x3;
+
+    if (tag == 0) {
+      uint64_t l = unpack_value(c->s + i, 2) >> 2;
+      n += l;
       i += 2;
-    } else if ((c->s[i] & 0x3) == 1) {
-      uint64_t M = (c->s[i])>>5;
-      uint64_t U = ((c->s[i])>>2) & 0x7;
+
+    } else if (tag == 1) {
+      uint64_t M = (c->s[i]) >> 5;
+      uint64_t U = ((c->s[i]) >> 2) & 0x7;
       while (M >= (1ul << nbits) || U >= (1ul << nbits)) nbits++;
       n++; i++;
-    } else if ((c->s[i] & 0x3) == 2) {
-      uint64_t M = (((uint16_t*) (c->s+i))[0])>>2;
-      uint64_t U = M & ((1<<7)-1);
-      M >>= 7;
+
+    } else if (tag == 2) {
+      uint64_t v = unpack_value(c->s + i, 2) >> 2;
+      uint64_t U = v & ((1ul << 7) - 1);
+      uint64_t M = v >> 7;
       while (M >= (1ul << nbits) || U >= (1ul << nbits)) nbits++;
       n++; i += 2;
-    } else {
-      uint64_t M = (((uint64_t*) (c->s+i))[0])>>2;
-      uint64_t U = M & ((1ul<<31)-1);
-      M >>= 31;
+
+    } else { // tag == 3
+      uint64_t v = unpack_value(c->s + i, 8) >> 2;
+      uint64_t U = v & ((1ul << 31) - 1);
+      uint64_t M = v >> 31;
       while (M >= (1ul << nbits) || U >= (1ul << nbits)) nbits++;
       n++; i += 8;
     }
   }
-  *unit = ((nbits+3)>>2); // nbits*2/8
+
+  *unit = ((nbits + 3) >> 2); // nbits*2/8
   return n;
 }
 

@@ -1,7 +1,7 @@
 Package: MethScope
 Title: Ultra-Fast Analysis of Sparse DNA Methylome via Recurrent
         Pattern Encoding
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: c(
     person("Hongxiang", "Fu", , "fhx@seas.upenn.edu", role = c("aut", "cre"),comment = c(ORCID = "0000-0002-9873-8606")),
     person("Wanding", "Zhou", , "wanding.zhou@pennmedicine.upenn.edu", role = c("cph", "fnd")),
@@ -21,7 +21,7 @@ Suggests: knitr, rmarkdown, spelling
 VignetteBuilder: knitr
 Depends: R (>= 2.10)
 NeedsCompilation: yes
-Packaged: 2025-12-03 17:38:44 UTC; fuh1
+Packaged: 2026-02-26 18:47:17 UTC; fuh1
 Maintainer: Hongxiang Fu <fhx@seas.upenn.edu>
 Language: en-US
 Author: Hongxiang Fu [aut, cre] (ORCID:
@@ -32,4 +32,4 @@ Author: Hongxiang Fu [aut, cre] (ORCID:
   Attractive Chaos [ctb, cph] (Author and copyright holder of khash.h
     (klib, MIT license))
 Repository: CRAN
-Date/Publication: 2025-12-09 16:00:07 UTC
+Date/Publication: 2026-02-26 19:20:02 UTC

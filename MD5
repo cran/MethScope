@@ -1,4 +1,4 @@
-b03aa6a83ce773efcd8c8e0da1e25bf1 *DESCRIPTION
+ec6f3393482d1dc24504eca0dc03c6bc *DESCRIPTION
 236a321110281ab515e8f6f6183f04de *LICENSE
 ae678791067eeb7d79a39bb6efff12c8 *NAMESPACE
 1553b5f902b1993321c71bb858594a0e *R/GenerateInput.R
@@ -15,18 +15,18 @@ b10cbccf7f35cf9623ba726e51b14138 *inst/COPYRIGHTS
 958e41b81905fd579e0b724b9dd34ee1 *inst/doc/MethScope-MRMP.Rmd
 4fe73a4ba565503a39472f5f7e2fb541 *inst/doc/MethScope-MRMP.html
 a942eabef853a093e82e0d7447a780cf *inst/doc/MethScope-Tutorial.R
-07539363001f08555948fe9bd88e4660 *inst/doc/MethScope-Tutorial.Rmd
-746c5329de2a7b1e2131b23d2527f7bb *inst/doc/MethScope-Tutorial.html
+47438f9fe0e19e669081cbed79122450 *inst/doc/MethScope-Tutorial.Rmd
+f6d96826cc771d48cd019a1541acfef1 *inst/doc/MethScope-Tutorial.html
 8d865fd67287dcb1255775f23bf68b66 *inst/extdata/toy.cg
 2840d6e93a635738fb5b825eb7fcb497 *inst/extdata/toy.cg.idx
 1b2b4ad2508030c1f37901c2afa086ad *inst/extdata/toy.cm
 cb4b84839134383f76c16cc9ca74e0e7 *man/GenerateInput.Rd
-52eb6a16a254c7192ec127f73fed4dfe *man/GenerateReference.Rd
+b3f08e0cbf3730562804b959ce3adbf8 *man/GenerateReference.Rd
 a024fe8c356c4e1b1e4ace7dfc4d289e *man/Input_training.Rd
 c83aa9bc1654265581da79591380a5e3 *man/PlotConfusion.Rd
 9cc2f3c5173764a3a880f28cfd5b969e *man/PlotF1.Rd
-c0d395372925282c3394a1cc3fb90c9a *man/PlotUMAP.Rd
-c318c8c269bf48a18b9787c6badcd8ed *man/PlotUMAP_fixedwindow.Rd
+df043e72eb71fa8c35664af5d0985e44 *man/PlotUMAP.Rd
+b40e7dfea5726c74230647a082ff96d2 *man/PlotUMAP_fixedwindow.Rd
 6bc3ac2acbac169be60d59ba1dd3f72f *man/PredictCellType.Rd
 0762f779ac6cce9e4b76ea62d53136cc *man/confidence_score.Rd
 6480e0f8f969f6ff6695f6578246d28b *man/confidence_score_top95.Rd
@@ -44,7 +44,7 @@ bff1fa583e3ea8fc926a6d078950151a *src/cfile.c
 cc045ad9c602302b10f560ed4b55abae *src/decompress.c
 9923a552c74b057df184127794a14b09 *src/format.c
 c6b0223afe51762368de91ed5744e384 *src/format2.c
-95b32cb506511f1d5ee0e6e890091dc5 *src/format3.c
+1a76ee69154cc7a9eec728e896483e52 *src/format3.c
 5e0f2cea22ce831c3c77ce7d7fab5848 *src/format6.c
 d818de39a7b0e5eab0b87e1fa40ccafa *src/format7.c
 03644a473c3d2c5ffa448bffb8b03f10 *src/index.c
@@ -62,4 +62,4 @@ cc7d33029013ce10747db6c62d96eeff *src/wzmisc.h
 7a78c1fb716041d7a8d9e102374a97be *src/wztarget.h
 0622a97a2aaa3c342f09636052c2d7f5 *tests/spelling.R
 958e41b81905fd579e0b724b9dd34ee1 *vignettes/MethScope-MRMP.Rmd
-07539363001f08555948fe9bd88e4660 *vignettes/MethScope-Tutorial.Rmd
+47438f9fe0e19e669081cbed79122450 *vignettes/MethScope-Tutorial.Rmd
