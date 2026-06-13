@@ -27,7 +27,8 @@ qry <- system.file("extdata", "toy.cg", package = "MethScope")
 msk <- system.file("extdata", "toy.cm", package = "MethScope")
 res <- GenerateInput(qry, msk)
 \dontrun{
-prediction <- PredictCellType(Liu2021_MouseBrain_P1000,res)
+model <- Liu2021_MouseBrain_P1000()
+prediction <- PredictCellType(model,res)
 }
 \dontshow{\}) # examplesIf}
 }

@@ -16,7 +16,8 @@ library(MethScope)
 #  input_pattern <- GenerateInput(example_file, reference_pattern)
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  prediction_result <- PredictCellType(MethScope:::Liu2021_MouseBrain_P1000,input_pattern)
+#  model <- Liu2021_MouseBrain_P1000()
+#  prediction_result <- PredictCellType(model,input_pattern)
 
 ## ----eval=FALSE---------------------------------------------------------------
 #  trained_model <- Input_training(input_pattern,cell_type_label)

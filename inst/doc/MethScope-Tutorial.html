@@ -357,9 +357,8 @@ reference.</p>
 <span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>input_pattern <span class="ot">&lt;-</span> <span class="fu">GenerateInput</span>(example_file, reference_pattern)</span></code></pre></div>
 <p>If your input data contains many cells, we recommend splitting your
 .cg files and run the above code in parallel to improve the runtime. To
-split your .cg files, please refer to (<a href="https://zhou-lab.github.io/YAME/docs/subcommands/YAME_subset.html" class="uri">https://zhou-lab.github.io/YAME/docs/subcommands/YAME_subset.html</a>).
-For understanding of each pattern, please check out our knowYourCG tool:
-<a href="https://www.bioconductor.org/packages/release/bioc/html/knowYourCG.html" class="uri">https://www.bioconductor.org/packages/release/bioc/html/knowYourCG.html</a></p>
+split your .cg files, please refer to the YAME documentation (<a href="https://zhou-lab.github.io/YAME/" class="uri">https://zhou-lab.github.io/YAME/</a>). For understanding of
+each pattern, please check out our knowYourCG tool: <a href="https://www.bioconductor.org/packages/release/bioc/html/knowYourCG.html" class="uri">https://www.bioconductor.org/packages/release/bioc/html/knowYourCG.html</a></p>
 </div>
 <div id="perform-cell-type-annotation" class="section level2">
 <h2>Perform cell type annotation</h2>
@@ -367,7 +366,8 @@ For understanding of each pattern, please check out our knowYourCG tool:
 shown below for ultra fast cell type annotation. We provided two built
 in pre-trained models for mouse brain: Liu2021_MouseBrain_P1000 and
 human tissue atlas: Zhou2025_HumanAtlas_P1000.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>prediction_result <span class="ot">&lt;-</span> <span class="fu">PredictCellType</span>(MethScope<span class="sc">:::</span>Liu2021_MouseBrain_P1000,input_pattern)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">Liu2021_MouseBrain_P1000</span>()</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>prediction_result <span class="ot">&lt;-</span> <span class="fu">PredictCellType</span>(model,input_pattern)</span></code></pre></div>
 </div>
 <div id="train-the-classification-model" class="section level2">
 <h2>Train the classification model</h2>

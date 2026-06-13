@@ -15,13 +15,29 @@
 #' msk <- system.file("extdata", "toy.cm", package = "MethScope")
 #' res <- GenerateInput(qry, msk)
 #' \dontrun{
-#' prediction <- PredictCellType(Liu2021_MouseBrain_P1000,res)
+#' model <- Liu2021_MouseBrain_P1000()
+#' prediction <- PredictCellType(model,res)
 #' }
 #' 
 PredictCellType <- function(bst_model, predictMatrix,smooth=FALSE,KNeighbor=5) {
-  numberOfClasses <- bst_model$params$num_class
-  cell_type_factor <- bst_model$cell_type
-  number_patterns <- bst_model$npattern
+  if (inherits(bst_model, "MethScopeModel")) {
+    booster <- bst_model$booster
+    numberOfClasses <- bst_model$num_class
+    cell_type_factor <- bst_model$cell_type
+    number_patterns <- bst_model$npattern
+  } else {
+    booster <- bst_model
+    numberOfClasses <- bst_model$params$num_class
+    cell_type_factor <- bst_model$cell_type
+    number_patterns <- bst_model$npattern
+  }
+  if (is.null(numberOfClasses) || is.null(cell_type_factor) || is.null(number_patterns)) {
+    stop("bst_model must include num_class, cell_type, and npattern metadata.", call. = FALSE)
+  }
+  if (ncol(predictMatrix) < number_patterns) {
+    stop("predictMatrix has ", ncol(predictMatrix), " columns, but the model expects ",
+         number_patterns, " patterns.", call. = FALSE)
+  }
   sample_names <- rownames(predictMatrix)
   predictMatrix = do.call(cbind, lapply(predictMatrix[,1:number_patterns], as.numeric))
   if (smooth){
@@ -34,11 +50,15 @@ PredictCellType <- function(bst_model, predictMatrix,smooth=FALSE,KNeighbor=5) {
     predictMatrix <- as.matrix(predictMatrix_smooth)
   }
   dtest <- xgboost::xgb.DMatrix(data = predictMatrix)
-  pred_result <- stats::predict(bst_model, newdata = dtest)
-  pred_result <- matrix(pred_result, nrow = numberOfClasses,
-                            ncol=length(pred_result)/numberOfClasses) %>%
-                     t() %>% data.frame() %>%
-                     dplyr::mutate(max_prob = max.col(., "last"))
+  pred_result <- stats::predict(booster, newdata = dtest)
+  if (is.matrix(pred_result)) {
+    pred_result <- data.frame(pred_result)
+  } else {
+    pred_result <- matrix(pred_result, nrow = numberOfClasses,
+                              ncol=length(pred_result)/numberOfClasses) %>%
+                       t() %>% data.frame()
+  }
+  pred_result <- pred_result %>% dplyr::mutate(max_prob = max.col(., "last"))
   num_to_factor <- stats::setNames(cell_type_factor, 1:length(cell_type_factor))
   pred_result$prediction_label <- factor(sapply(pred_result$max_prob, function(x) num_to_factor[as.character(x)]), levels = cell_type_factor)
   confiscore <- apply(pred_result[,1:numberOfClasses], 1, confidence_score)

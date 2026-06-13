@@ -4,6 +4,8 @@
 
 ## Installation
 
+MethScope requires R >= 4.0 and the zlib system library.
+
 Install the released version of usethis from CRAN:
 
 ``` r

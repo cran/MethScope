@@ -31,14 +31,15 @@ reference_pattern <- "Liu2021_MouseBrain.cm"
 input_pattern <- GenerateInput(example_file, reference_pattern)
 ```
 
-If your input data contains many cells, we recommend splitting your .cg files and run the above code in parallel to improve the runtime. To split your .cg files, please refer to (https://zhou-lab.github.io/YAME/docs/subcommands/YAME_subset.html). For understanding of each pattern, please check out our knowYourCG tool: https://www.bioconductor.org/packages/release/bioc/html/knowYourCG.html
+If your input data contains many cells, we recommend splitting your .cg files and run the above code in parallel to improve the runtime. To split your .cg files, please refer to the YAME documentation (https://zhou-lab.github.io/YAME/). For understanding of each pattern, please check out our knowYourCG tool: https://www.bioconductor.org/packages/release/bioc/html/knowYourCG.html
 
 ## Perform cell type annotation
 
 To use our pre-trained model, simply use PredictCellType function as shown below for ultra fast cell type annotation. We provided two built in pre-trained models for mouse brain: Liu2021_MouseBrain_P1000 and human tissue atlas: Zhou2025_HumanAtlas_P1000.
 
 ```{r,eval=FALSE}
-prediction_result <- PredictCellType(MethScope:::Liu2021_MouseBrain_P1000,input_pattern)
+model <- Liu2021_MouseBrain_P1000()
+prediction_result <- PredictCellType(model,input_pattern)
 ```
 
 ## Train the classification model
