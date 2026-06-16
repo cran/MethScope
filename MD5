@@ -1,4 +1,4 @@
-2c9d63437a7aad8620d2b4015fa89a72 *DESCRIPTION
+b9bb0438751efdc87c05d246b3051366 *DESCRIPTION
 236a321110281ab515e8f6f6183f04de *LICENSE
 0ab4b5909f8c7319e5cb11bd15931682 *NAMESPACE
 1553b5f902b1993321c71bb858594a0e *R/GenerateInput.R
@@ -8,16 +8,16 @@ be3899dcdcb8a5f9e6dfd44e9bd0e6aa *R/PretrainedModels.R
 15445d512e75d1f44a78fe0858be1f8c *R/VisualizeOutput.R
 22e524576892f3e7c9a05df101cbacf8 *R/sysdata.rda
 d195cc0bd63f64f1d7b9dd9947673e23 *R/utils.R
-09bb64ead37a554c13e043bb3e57acb6 *README.md
+101702d7bc98ca4eb36c183e49a43513 *README.md
 a89de04b453d87bd9811a1a4a1290f18 *build/vignette.rds
 b10cbccf7f35cf9623ba726e51b14138 *inst/COPYRIGHTS
 0e8dc63a08ebd60cb2f31bf6a305036b *inst/WORDLIST
 70911749e922b6362412e37246df13f0 *inst/doc/MethScope-MRMP.R
 958e41b81905fd579e0b724b9dd34ee1 *inst/doc/MethScope-MRMP.Rmd
 4fe73a4ba565503a39472f5f7e2fb541 *inst/doc/MethScope-MRMP.html
-cd5dcc53cf420db5c46c97283e2890dd *inst/doc/MethScope-Tutorial.R
-776a360ba98beb831c0b55ff661e3dcf *inst/doc/MethScope-Tutorial.Rmd
-059ef789ebdc71641310090bef75c519 *inst/doc/MethScope-Tutorial.html
+a42d6a4a342845fb5d960d843e0c96c1 *inst/doc/MethScope-Tutorial.R
+1439461dbde012f621c75454b1a69e05 *inst/doc/MethScope-Tutorial.Rmd
+64d9354d26b37bff225af1c98880d641 *inst/doc/MethScope-Tutorial.html
 9188adac22af8c7ffb1a64e92ebafba0 *inst/extdata/models/Liu2021_MouseBrain_P1000.ubj.gz
 93f12cb07c4f3d783874e42e04578f8d *inst/extdata/models/Zhou2025_HumanAtlas_P1000.ubj.gz
 8d865fd67287dcb1255775f23bf68b66 *inst/extdata/toy.cg
@@ -40,7 +40,7 @@ b40e7dfea5726c74230647a082ff96d2 *man/PlotUMAP_fixedwindow.Rd
 094161d77803fdeb6175c62b952ba8b7 *man/imputeRowMean.Rd
 01210402db539170a43f699072bd948b *man/nnls_deconv.Rd
 42f17958a8476003ff7fb4fcdf38c18c *man/smooth_matrix.Rd
-1ac8c3835cb7d5f60d589728abe494fb *src/Makevars
+f1905d8acedf9e2afd3735e37918556b *src/Makevars
 4d435c00ac9d981225d03331750bd7f5 *src/bgzf.c
 d3381bbe663a7134781129f44047d996 *src/bgzf.h
 cc3d1dd896269e7a85b0e1379fc38a1c *src/cdata.h
@@ -69,4 +69,4 @@ cc7d33029013ce10747db6c62d96eeff *src/wzmisc.h
 a74f3bfcb7bc5ee971c5d09bd07b409c *tests/testthat.R
 975c4262550d76a7aa1ac6d65f9ede91 *tests/testthat/test-pretrained-models.R
 958e41b81905fd579e0b724b9dd34ee1 *vignettes/MethScope-MRMP.Rmd
-776a360ba98beb831c0b55ff661e3dcf *vignettes/MethScope-Tutorial.Rmd
+1439461dbde012f621c75454b1a69e05 *vignettes/MethScope-Tutorial.Rmd

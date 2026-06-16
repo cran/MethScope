@@ -10,8 +10,14 @@ knitr::opts_chunk$set(
 library(MethScope)
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  #path to your .cg and .cm files
-#  example_file <- "example.cg"
+#  # CRAN-compatible toy example
+#  example_file <- system.file("extdata", "toy.cg", package = "MethScope")
+#  reference_pattern <- system.file("extdata", "toy.cm", package = "MethScope")
+#  input_pattern <- GenerateInput(example_file, reference_pattern)
+
+## ----eval=FALSE---------------------------------------------------------------
+#  # Fuller GitHub example after cloning the repository
+#  example_file <- "inst/extdata/example.cg"
 #  reference_pattern <- "Liu2021_MouseBrain.cm"
 #  input_pattern <- GenerateInput(example_file, reference_pattern)
 

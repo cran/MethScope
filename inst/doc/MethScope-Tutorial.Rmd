@@ -22,11 +22,18 @@ library(MethScope)
 
 ## Generate cell/pixel/sample MRMPs' embedding
 
-In the below code, we will demonstrate how to genate the cell by MRMPs matrix using our example.cg file, please check out our (https://github.com/zhou-lab/methscope_data). Replace it with your own .cg data file path, and for more details about how to create .cg file, please check out (https://zhou-lab.github.io/YAME/). We provided three reference MRMPs definitions (mouse brain and human pan tissues), please check out our MRMPs reference tutorial for creating your own reference.  
+The CRAN package includes a small toy dataset for quick installation checks. The GitHub repository also provides a larger `inst/extdata/example.cg` file for fuller end-to-end testing after cloning the repository. Replace either example query with your own .cg data file path. For more details about how to create .cg files, please check out YAME (https://zhou-lab.github.io/YAME/). We provided three reference MRMPs definitions (mouse brain and human pan tissues), please check out our MRMPs reference tutorial for creating your own reference.
 
 ```{r,eval=FALSE}
-#path to your .cg and .cm files
-example_file <- "example.cg"
+# CRAN-compatible toy example
+example_file <- system.file("extdata", "toy.cg", package = "MethScope")
+reference_pattern <- system.file("extdata", "toy.cm", package = "MethScope")
+input_pattern <- GenerateInput(example_file, reference_pattern)
+```
+
+```{r,eval=FALSE}
+# Fuller GitHub example after cloning the repository
+example_file <- "inst/extdata/example.cg"
 reference_pattern <- "Liu2021_MouseBrain.cm"
 input_pattern <- GenerateInput(example_file, reference_pattern)
 ```

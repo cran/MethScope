@@ -24,6 +24,24 @@ devtools::install_github("zhou-lab/MethScope")
 
 [Explore the MethScope Website](https://zhou-lab.github.io/MethScope/)
 
+## Example Data
+
+The CRAN package includes a small toy dataset for quick installation checks and examples:
+
+```r
+qry <- system.file("extdata", "toy.cg", package = "MethScope")
+msk <- system.file("extdata", "toy.cm", package = "MethScope")
+res <- GenerateInput(qry, msk)
+```
+
+The GitHub repository also provides a larger `inst/extdata/example.cg` file for fuller end-to-end testing after cloning the repository. This larger file is excluded from CRAN builds to keep the package size appropriate for CRAN.
+
+```r
+qry <- "inst/extdata/example.cg"
+msk <- system.file("extdata", "toy.cm", package = "MethScope")
+res <- GenerateInput(qry, msk)
+```
+
 ## Citation
 
 If you use MethScope, kindly cite (coming soon):
